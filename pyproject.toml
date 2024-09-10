@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "scratch"
+version = "0.1.0"
+description = "My view of the code from Data Science from Scratch by Joel Grus."
+authors = ["Marcos Gabriel Guimarães de Assis <mg.21191077@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+repository = "https://github.com/Resmung0/ds-from-scratch-series.git"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+matplotlib = "^3.9.2"
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.29.0"
+mypy = "^1.11.1"
+ruff = "^0.6.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "~7.2.2"
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "semver"
+version_provider = "poetry"
+update_changelog_on_bump = true
+
+[tool.mypy]
+files = ["{{ cookiecutter.python_package }}/", "test/"]
+ignore_missing_imports = true
